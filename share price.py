@@ -10,15 +10,15 @@ chrome_options = Options()
 chrome_options.add_argument('--headless')
 
 # Instantiate the Chrome driver with the headless options
-driver = webdriver.Chrome(options=chrome_options)
-
+driver = webdriver.Chrome()
+share_name = 'دي'
 
 driver.get("http://www.tsetmc.com/Loader.aspx?ParTree=15")
 
 wait = WebDriverWait(driver, 10)
 element = wait.until(EC.element_to_be_clickable((By.ID, "search"))).click()
 wait = WebDriverWait(driver, 10)
-element = wait.until(EC.element_to_be_clickable((By.ID, "SearchKey"))).send_keys('خساپا')
+element = wait.until(EC.element_to_be_clickable((By.ID, "SearchKey"))).send_keys(share_name)
 wait = WebDriverWait(driver, 10)
 wait.until(EC.element_to_be_clickable((By.XPATH, "//*[@id='SearchResult']/div/div[2]/table/tbody/tr[1]/td[1]/a"))).click()
 wait = WebDriverWait(driver, 10)
